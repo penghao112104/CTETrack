@@ -64,4 +64,4 @@ We use [RGBT_toolkit_python](https://github.com/Alexadlu/RGBT_toolkit_python) to
 ## Acknowledgment
 
 - This repository is based on [BAT](https://github.com/SparkTempest/BAT), which is an excellent work.
-- Thanks for the OSTrack and PyTracking library.
+- Thanks for the [OSTrack](https://github.com/botaoye/OSTrack) and [PyTracking](https://github.com/visionml/pytracking) library.
