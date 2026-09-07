@@ -1,8 +1,6 @@
 # CTETrack: Cross-Temporal Representation Enhancement and Reliability-Aware Fusion for RGBT Tracking
 
-Official PyTorch implementation of **CTETrack**.
-
-The trained model and tracking results will be provided here.
+You can download the model and results from [here](https://pan.baidu.com/s/18ivR61BnGO5pjC4Fkvo6Fg?pwd=9ir3)
 
 ### Installation
 
@@ -20,23 +18,6 @@ pip install -r requirements.txt
 pip install causal-conv1d mamba-ssm --no-build-isolation
 ```
 
-### Data Preparation
-
-Download the LasHeR training and testing sets. The directory structure should look like:
-
-```text
-<PATH_OF_DATASETS>/
-└── LasHeR/
-    ├── TrainingSet/
-    │   ├── 1boygo/
-    │   ├── 1handsth/
-    │   └── ...
-    └── TestingSet/
-        ├── sequence_1/
-        ├── sequence_2/
-        └── ...
-```
-
 ### Path Setting
 
 Run the following command to configure the local paths:
@@ -47,13 +28,6 @@ python tracking/create_default_local_file.py \
   --workspace_dir . \
   --data_dir <PATH_OF_DATASETS> \
   --save_dir ./output
-```
-
-The generated path files are:
-
-```text
-lib/train/admin/local.py
-lib/test/evaluation/local.py
 ```
 
 ### Training
@@ -70,8 +44,6 @@ Training logs are saved under `./output/logs/`.
 
 ### Testing
 
-#### For RGB-T benchmarks
-
 Run the following command with the path containing only the test sequences:
 
 ```bash
@@ -87,10 +59,9 @@ bash test_ctetrack.sh <PATH_OF_CHECKPOINT>
 RGBT_workspace/results/<dataset>/CTETrack/
 ```
 
-We refer you to the [LasHeR Toolkit](https://github.com/BUGPLEASEOUT/LasHeR) for LasHeR evaluation and [MPR_MSR_Evaluation](https://sites.google.com/view/ahutracking001/) for RGBT234 evaluation.
+We use [RGBT_toolkit_python](https://github.com/Alexadlu/RGBT_toolkit_python) to evaluate the tracking results on GTOT, RGBT210, RGBT234, and LasHeR.
 
 ## Acknowledgment
 
-- This repository is based on [OSTrack](https://github.com/botaoye/OSTrack).
-- We use pretrained weights from [DropTrack](https://github.com/jimmy-dq/DropTrack).
-- We thank the authors for releasing their code and models.
+- This repository is based on [BAT](https://github.com/SparkTempest/BAT), which is an excellent work.
+- Thanks for the OSTrack and PyTracking library.
